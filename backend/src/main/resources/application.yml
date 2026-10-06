@@ -1,0 +1,5 @@
+server:
+  port: 8080
+kaivi:
+  analysis:
+    base-url: ${KAIVI_ANALYSIS_BASE_URL:http://localhost:5001}

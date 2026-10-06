@@ -1,0 +1,14 @@
+services:
+  analyzer:
+    build: ./data-science
+    ports:
+      - "5001:5001"
+
+  api:
+    build: ./backend
+    depends_on:
+      - analyzer
+    environment:
+      KAIVI_ANALYSIS_BASE_URL: http://analyzer:5001
+    ports:
+      - "8080:8080"
